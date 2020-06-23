@@ -5,59 +5,138 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Hyperspace</a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
-					</ul>
-				</nav>
-			</header>
+<head>
+    <title>Generic - Hyperspace by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">A Generic Page</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						</div>
-					</section>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
 
-			</div>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">A temperature tracker</h1>
+                <p>Picture this scenario: A pandemic has reached the shore of Panem. The President has ordered a
+                    lockdown. All the inhabitants in the outlying  Districts are to be quarantined within
+                    their own District and tagged with a tracker. Each District will have
+                    an edge processor that is to be operated by the local Peacekeepers to track the temperature of the inhabitants. 
+                    The Capitol itself will host a cloud server that is capable of
+                    collating all the tracking information and provide the President with a global view of the
+                    inhabitants across the districts</p>
+                <p>Each Raspberry Pi is an edge processor that is connected to a controller Microbit. The controller microbit is then used to
+                    interface to the other trackers wirelessly via radio.</p>
+                <p>Raspberry Pi, Microbit, Python Flask, Connexion, SQLite, JS</p>
+                <p>Scenario Credit: Prof Tan Wee Kek</p>
+                <div class="row gtr-uniform">
+                    <div class="col-12">
+                        <span class="image left"><img style="max-height:1000px;width: auto;"
+                                src="images/tracker/IMG20200623150502.jpg" alt="" /></span>
+                        <span class="zoom-without-container image right"><img
+                                src="images/tracker/Annotation 2020-06-23 135137.png" alt="" /></span>
+                        <span class="zoom-without-container image right"><img
+                                src="images/tracker/Annotation 2020-06-23 135258.png" alt="" /></span>
+                        <span class="zoom-without-container image right"><img
+                                src="images/tracker/Annotation 2020-06-23 135711.png" alt="" /></span>
+                    </div>
+                    <div class="col-4">
+                        <span class="zoom-without-container image fit"><img
+                                src="images/tracker/Annotation 2020-06-23 135805.png" alt="" /></span>
+                    </div>
+                    <div class="col-4">
+                        <span class="zoom-without-container image fit">
+                            <figure>
+                                <img src="images/tracker/Annotation 2020-06-23 141035.png" alt="" />
+                                <figcaption>The central dashboard: view alerts and disabling of alarms is done
+                                </figcaption>
+                            </figure>
+                        </span>
+                    </div>
+                    <div class="col-4">
+                        <span class="zoom-without-container image fit">
+                            <figure>
+                                <img src='images/tracker/IMG20200623135534.jpg' alt='missing' />
+                                <figcaption>The dots represents the temp above 30C</figcaption>
+                            </figure>
+                        </span>
+                    </div>
+                    <div class="col-4">
+                        <span class="zoom-without-container image fit">
+                            <figure>
+                                <img src='images/tracker/IMG20200623140953.jpg' alt='missing' />
+                                <figcaption>When temp is too high, an alert is sent out and the red LED represents that.
+                                </figcaption>
+                            </figure>
+                        </span>
+                    </div>
+                    <div class="col-4">
+                        <span class="zoom-without-container image fit"><img src="images/tracker/IMG20200623141008.jpg"
+                                alt="" /></span>
+                    </div>
+                    <div class="col-4">
+                        <video style="width: 100%;" controls>
+                            <source src="images/tracker/VID20200623141052.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        Global alarm causing the flashing of red led.
+                    </div>
+                    <div class="col-4">
+                        <video style="width: 100%;" controls>
+                            <source src="images/tracker/VID20200623142123.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        Demo 1: The entry of a microbit that is not recognised by the Rpi controller causes an alarm to
+                        be sent and the blue LED to light up
+                    </div>
+                    <div class="col-4">
+                        <video style="width: 100%;" controls>
+                            <source src="images/tracker/VID20200623142759.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        Demo 2: The entry of a microbit that is not recognised by the Rpi controller causes an alarm to
+                        be sent and the blue LED to light up
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    </div>
 
-	</body>
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
