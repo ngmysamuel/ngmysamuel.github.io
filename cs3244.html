@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Generic - Hyperspace by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">IDS with ML</h1>
+                <p>This project aimed to explore temporal network traffic data to extract relevant features that
+                    differentiate network intrusion from normal traffic. An autoencoder was first used to perform
+                    dimensionality reduction before utilising a simple ANN to classify the results into malicious or
+                    not. </p>
+                <p>You can read more at the following pages: <a href="https://isteps.comp.nus.edu.sg/event/15th-steps/module/CS3244/project/17">STEPS Showcase</a> and <a href="https://github.com/ChooJeremy/NIDS-ML">Github</a></p>
+            </div>
+            <details style="padding: 2em 2em 2em 11em">
+                <summary>Code Snippet 1: Preprocessing</summary>
+                <pre><code>
+# to find the average number of rows in each file
+for parent_dir in file_list:
+    start = 0
+    count = 0
+    for f in os.listdir(parent_dir):
+        with open(os.path.join(parent_dir, f), 'r') as fp:
+            if not f.endswith(".json"):
+                continue
+            jsonstr = json.load(fp)
+        print(str(parent_dir) + "/" + str(f))
+        start = start + 1
+        if (count < num_of_test_files+num_of_val_files):
+            count += 1
+            continue
+        d1 = preprocess(jsonstr)
+        row += d1.shape[0]
+
+        # 1 for attack, 0 for normal data
+        if parent_dir in normal_dirs:
+            d1.insert(d1.shape[1], "class", [0] * d1.shape[0], True)
+            print("Normal")
+            print(parent_dir)
+        else:
+            d1.insert(d1.shape[1], "class", [1] * d1.shape[0], True)
+            print("Attack")
+            print(parent_dir)
+
+        for i in d1:
+            if (i in freq):
+                freq[i] += 1.0
+            else:
+                freq[i]  = 1.0
+        count += 1
+        if limit_files and start > limit:
+            break
+avg_row = row // count
+
+# finding which columns to keep
+for i in freq:
+    if not ((freq[i]/count) < 0.5) and not ("ip" in i) and not ("epoch" in i):
+        approved_columns.append(i)
+print("Approved columns length: ", len(approved_columns))
+np.save("approved_columns.npy", approved_columns)
+                        </code></pre>
+            </details>
+            <details style="padding: 1em 2em 2em 11em">
+                <summary>Code Snippet 2: Model</summary>
+                <pre><code>
+with session:
+    # define model
+    timesteps = stacked_df.shape[1]
+    n_features = stacked_df.shape[2]
+    val_stacked_df = tf.convert_to_tensor(val_stacked_df, np.float64)
+    test_stacked_df = tf.convert_to_tensor(test_stacked_df, np.float64)
+    stacked_df = tf.convert_to_tensor(stacked_df, np.float64) #uncomment if you are not normalizing above
+
+    model = Sequential()
+    model.add(Masking(mask_value=-1., input_shape=(stacked_df.shape[1], stacked_df.shape[2])))
+    model.add(LSTM(150, return_sequences=True))
+    model.add(LeakyReLU(alpha=0.05))
+    model.add(Dropout(0.2))
+    model.add(LSTM(100, return_sequences=True))
+    model.add(LeakyReLU(alpha=0.05))
+    model.add(Dropout(0.2))
+    model.add(LSTM(50, return_sequences=False, name='bottleneck'))
+    model.add(LeakyReLU(alpha=0.05))
+    print("Encoder added")
+    model.add(RepeatVector(timesteps))
+    print("Adding Decoder")
+    model.add(LSTM(50, return_sequences=True))
+    model.add(LeakyReLU(alpha=0.05))
+    model.add(LSTM(100, return_sequences=True))
+    model.add(LeakyReLU(alpha=0.05))
+    model.add(LSTM(150, return_sequences=True))
+    model.add(LeakyReLU(alpha=0.05))
+    model.add(TimeDistributed(Dense(n_features)))
+    adam = keras.optimizers.Adam()
+    model.compile(optimizer=adam, loss='mse',  metrics=["accuracy"])
+    print(model.summary())
+    mc1 = ModelCheckpoint('model.h5', monitor='val_loss', mode='min', verbose=1, save_best_only=True)
+
+                </code></pre>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
