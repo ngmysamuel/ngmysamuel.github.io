@@ -34,12 +34,12 @@
         <!-- Main -->
         <section id="main" class="wrapper">
             <div class="inner">
-                <h1 class="major">IDS with ML</h1>
+                <h1 class="major">IDS with ML<span style="font-size: medium; font-weight: lighter; float: right;color: #add8e6 ;">Source:&nbsp;&nbsp;<a href="https://github.com/ChooJeremy/NIDS-ML"><i class="fab fa-github" style="color:#bc8f8f ;"></i>&nbsp;<span style="color:#bc8f8f ;">Github</span></a></span></h1>
                 <p>This project aimed to explore temporal network traffic data to extract relevant features that
                     differentiate network intrusion from normal traffic. An autoencoder was first used to perform
                     dimensionality reduction before utilising a simple ANN to classify the results into malicious or
                     not. </p>
-                <p>You can read more at the following pages: <a href="https://isteps.comp.nus.edu.sg/event/15th-steps/module/CS3244/project/17">STEPS Showcase</a> and <a href="https://github.com/ChooJeremy/NIDS-ML">Github</a></p>
+                <p>You can read more at the following pages as well: <a href="https://isteps.comp.nus.edu.sg/event/15th-steps/module/CS3244/project/17">STEPS Showcase</a> and <a href="https://i.imgur.com/APIkzdL.jpg">Poster</a></p>
             </div>
             <details style="padding: 2em 2em 2em 11em">
                 <summary>Code Snippet 1: Preprocessing</summary>
@@ -126,8 +126,9 @@ with session:
     mc1 = ModelCheckpoint('model.h5', monitor='val_loss', mode='min', verbose=1, save_best_only=True)
 
                 </code></pre>
+            </details>
+        
         </section>
-
     </div>
 
     <!-- Footer -->
