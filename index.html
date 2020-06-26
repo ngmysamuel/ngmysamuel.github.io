@@ -25,6 +25,7 @@
 				<ul>
 					<li><a href="#intro">Welcome</a></li>
 					<li><a href="#one">My Projects</a></li>
+					<li><a href="#two">My Experience</a></li>
 					<li><a href="#three">Get in touch</a></li>
 				</ul>
 			</nav>
@@ -135,7 +136,47 @@
 			</section>
 		</section>
 
-
+		<!-- Two -->
+		<section id="two" class="timeline" style="height: 105vh; background-color: rgb(160, 107, 107);">  
+			<!-- As you add more things, increas the height in the line above. Look in main.css for timeline stuff -->
+			<span style="display: block;text-align: center;">
+			<h1 style="font-family: exp;">My Experience</h1></span>
+			<ul>
+			  <li>
+				<div>
+				  
+				  <time>May 2019 - Jul 2019</time><br>
+				  <b>NUS Orbital : Advisor </b><br>
+				  •	Provided guidance and advise to 5 teams over the summer
+				</div>
+			  </li>
+			   
+			  <!-- more list items here -->
+			  <li>
+				<div>
+					<time>May 2019 - Aug 2019</time><br>
+					<b>Singapore Exchange : Software Engineering intern</b><br>
+					<span>
+					  •	Trained on the job in Agile practises<br>•	Multi-modal notification system through AWS services
+					  </span>
+				</div>
+			  </li>
+			  <li>
+				<div>
+				  <time>May 2020 - Present</time> <br>
+				  <b>NUS Orbital : Senior Advisor </b><br>
+				  •	Provided guidance and advise to 12 teams over the summer
+				</div>
+			  </li>
+			  <li>
+				<div>
+				  <time>June 2020 - Present</time><br>
+				  <b>Ampol : Data Analyst intern </b><br>
+				  	
+				</div>
+			  </li>
+			</ul>
+		  </section>
 
 		<!-- Three -->
 		<section id="three" class="wrapper style1 fade-up">
@@ -190,6 +231,34 @@
 
 	<script src="particles.js"></script>
 	<script src="app.js"></script>
+
+	<script>
+		function isElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+		var items = document.querySelectorAll(".timeline li");
+
+		// code for the isElementInViewport function
+
+		function callbackFunc() {
+			for (var i = 0; i < items.length; i++) {
+				if (isElementInViewport(items[i])) {
+					items[i].classList.add("in-view");
+				} else {
+					items[i].classList.remove("in-view");
+				}
+			}
+		}
+
+		window.addEventListener("load", callbackFunc);
+		window.addEventListener("scroll", callbackFunc);
+	</script>
 </body>
 
 </html>
