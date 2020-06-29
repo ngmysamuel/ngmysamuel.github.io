@@ -2627,7 +2627,7 @@ input, select, textarea {
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2em 0;
+		/* margin: 0 0 2em 0; */
 		padding-left: 1em;
 	}
 
@@ -3945,6 +3945,12 @@ input, select, textarea {
 }
 
 
+.timeline { /*min-height: even if there is lesser items, it will still take up the full screen space. It will auto expand when there are more.*/
+	min-height: 100vh; 
+	background-color: rgb(160, 107, 107);
+	padding-bottom: 2%;
+}
+
 .timeline ul li {
 	list-style-type: none;
 	position: relative;
@@ -4031,6 +4037,15 @@ input, select, textarea {
 	visibility: visible;
 	opacity: 1;
 	}
+
+@media screen and (max-width: 1450px) {  /*this is where it controls the width of the timeline box becoming smaller when you make the screen smaller*/
+		.timeline ul li div {
+			width: 350px;
+		}
+		.timeline ul li:nth-child(even) div {
+			left: -389px; /*350+45-6*/
+		}
+		}
 
 @media screen and (max-width: 900px) {
 		.timeline ul li div {
