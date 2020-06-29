@@ -3945,6 +3945,12 @@ input, select, textarea {
 }
 
 
+/*
+1680px is when the font size becomes small
+1450px is when the edges of the box start to disappear (based of the current dimensions of the boxes)
+1280px is when the sidebar disappears
+*/
+
 .timeline { /*min-height: even if there is lesser items, it will still take up the full screen space. It will auto expand when there are more.*/
 	min-height: 100vh; 
 	background-color: rgb(160, 107, 107);
