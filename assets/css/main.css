@@ -3299,11 +3299,13 @@ input, select, textarea {
 
 				.wrapper.fullscreen {
 					padding: 2em 0;
-					min-height: 0;
+					min-height: 100vh;  /*This line was changed from 0 to 100vh to make sure that on small devices it still stretched to full*/
 				}
 
 					body.is-ie .wrapper.fullscreen {
 						height: auto;
+						/* min-height: calc(100vh - 2.5em); */
+						/* min-height: 100vh; */
 					}
 
 			}
@@ -3537,6 +3539,10 @@ input, select, textarea {
 		z-index: 10000;
 	}
 
+	.navbar_icon { /*This is a new class I made, you can take a look at the @media for 615px below. The nav bar icon is hidden by default  */
+		display: none;
+	}
+
 		#sidebar > .inner {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -3571,7 +3577,9 @@ input, select, textarea {
 			list-style: none;
 			padding: 0;
 		}
-
+		#sidebar nav ul li a i {
+			display: none;
+		}
 			#sidebar nav > ul > li {
 				-moz-transform: translateY(0);
 				-webkit-transform: translateY(0);
@@ -3857,17 +3865,37 @@ input, select, textarea {
 
 						#sidebar nav a:after {
 							background-image: none;
-							background-color: #b74e91;
+							/* background-color: #b74e91; */ 
+							/*This was commented out because I cant figure out how to make the highlight follow wher you are actually on the page
+							I.E. this is an underline on the icon
+							*/
 						}
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 736px) { /*This was previously the limit till where the nav bar would disapepar.*/
+			/* #sidebar {
+				display: none;
+			} */
+		}
 
-			#sidebar {
+		@media screen and (max-width: 615px) { /*This is a new @media to cater for a nav bar on small devices. Words were too long for small screens so 
+			i had to use icons instead. */
+
+			.navbar_icon {
+				display: inline;
+				padding-top: 45%;
+				width: 30px; 
+				height: auto;
+			}
+
+			.words {
 				display: none;
 			}
 
+			/* #sidebar {
+				display: none;
+			} */
 		}
 
 /* Intro */
@@ -3888,7 +3916,7 @@ input, select, textarea {
 			@media screen and (max-width: 980px) {
 
 				#intro p br {
-					display: none;
+					/* display: none; */ /*This line was commented out to make sure that the <br> still showed up on small devices*/
 				}
 
 			}
@@ -3950,6 +3978,7 @@ input, select, textarea {
 1680px is when the font size becomes small
 1450px is when the edges of the box start to disappear (based of the current dimensions of the boxes)
 1280px is when the sidebar disappears
+736px is where the top nav bar disappears (previously)
 */
 
 .timeline { /*min-height: even if there is lesser items, it will still take up the full screen space. It will auto expand when there are more.*/

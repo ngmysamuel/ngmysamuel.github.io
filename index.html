@@ -18,19 +18,26 @@
 
 <body class="is-preload">
 
+
 	<!-- Sidebar -->
 	<section id="sidebar">
 		<div class="inner">
-			<nav>
+			<nav> 
 				<ul>
-					<li><a href="#intro">Welcome</a></li>
-					<li><a href="#one">My Projects</a></li>
-					<li><a href="#two">My Experience</a></li>
-					<li><a href="#three">Get in touch</a></li>
+					<li><a href="#intro"><img src="s.png" class="navbar_icon"></a></li>
+					<li><a href="#intro"><span class="words">Welcome</span></a></li>
+					<li><a href="#one"><img src="project3.png" class="navbar_icon"></a></li>
+					<li><a href="#one"><span class="words">My Projects</span></a></li>
+					<li><a href="#two"><img src="experience.png" class="navbar_icon"></a></li>
+					<li><a href="#two"><span class="words">My Experience</span></a></li>
+					<li><a href="#three"><img src="get_in_touch.png" class="navbar_icon"></a></li>
+					<li><a href="#three"><span class="words">Get in touch</span></a></li>
 				</ul>
 			</nav>
 		</div>
 	</section>
+
+
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -43,9 +50,6 @@
 			<p style="font-size: 1em; padding: 1em 4em 0em 4em;max-width: 100%;width: 75em;"> 
 				Soon to be a Final Year student at the National University of Singapore,
 				majoring in Information Systems; my specialisation is in Financial Technology<br><br>
-				I am a driven individual who is passionate about technology, being more than willing pick
-				up any new skills needed! My expertise are in full stack development / software engineering
-				however I am eager to explore other fields.<br><br>
 				I hold interests in robotics and artificial intelligence, having had some background in 
 				developing with Hyperledger Fabric as well. 
 				</p>
@@ -258,6 +262,15 @@
 
 		window.addEventListener("load", callbackFunc);
 		window.addEventListener("scroll", callbackFunc);
+
+		function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
 	</script>
 </body>
 
