@@ -3956,6 +3956,7 @@ input, select, textarea {
 	min-height: 100vh; 
 	background-color: rgb(160, 107, 107);
 	padding-bottom: 2%;
+	padding-top: 3%;
 }
 
 .timeline ul li {
