@@ -3539,10 +3539,6 @@ input, select, textarea {
 		z-index: 10000;
 	}
 
-	.navbar_icon { /*This is a new class I made, you can take a look at the @media for 615px below. The nav bar icon is hidden by default  */
-		display: none;
-	}
-
 		#sidebar > .inner {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -3815,6 +3811,8 @@ input, select, textarea {
 				left: 0;
 				line-height: 3.5em;
 				overflow: hidden;
+				/* word-wrap: break-word; */
+				/* white-space: initial; */
 				padding: 0;
 				text-align: center;
 				top: 0;
@@ -3863,39 +3861,45 @@ input, select, textarea {
 						padding: 0;
 					}
 
-						#sidebar nav a:after {
+						#sidebar nav a.active:after {
 							background-image: none;
-							/* background-color: #b74e91; */ 
-							/*This was commented out because I cant figure out how to make the highlight follow wher you are actually on the page
-							I.E. this is an underline on the icon
-							*/
+							background-color: #b74e91; 
 						}
 
 		}
 
-		@media screen and (max-width: 736px) { /*This was previously the limit till where the nav bar would disapepar.*/
-			/* #sidebar {
-				display: none;
-			} */
+		@media screen and (max-width: 615px) { 
+						#sidebar nav ul li {
+							display: block;
+							height: inherit;
+							line-height: inherit;
+							margin: 0 0 0 1.35em; /*change this to vary the space between each <a>*/
+							padding: 0;
+						}
+
+					#sidebar nav a {
+						height: inherit;
+						line-height: inherit;
+						padding: 0;
+						letter-spacing: 0.2em; /*Change this to vary the space between letters*/
+					}
 		}
 
-		@media screen and (max-width: 615px) { /*This is a new @media to cater for a nav bar on small devices. Words were too long for small screens so 
-			i had to use icons instead. */
+		@media screen and (max-width: 400px) { 
+						#sidebar nav ul li {
+							display: block;
+							height: inherit;
+							line-height: inherit;
+							margin: 0 0 0 1em; /*change this to vary the space between each <a>*/
+							padding: 0;
+						}
 
-			.navbar_icon {
-				display: inline;
-				padding-top: 45%;
-				width: 30px; 
-				height: auto;
-			}
-
-			.words {
-				display: none;
-			}
-
-			/* #sidebar {
-				display: none;
-			} */
+					#sidebar nav a {
+						height: inherit;
+						line-height: inherit;
+						padding: 0;
+						letter-spacing: 0.15em;  /*Change this to vary the space between letters*/
+					}
 		}
 
 /* Intro */
