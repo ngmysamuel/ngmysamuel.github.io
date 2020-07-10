@@ -41,8 +41,8 @@
                     dimensionality reduction before utilising a simple ANN to classify the results into malicious or
                     not. </p>
                 <p>You can read more at the following pages as well: <a href="https://isteps.comp.nus.edu.sg/event/15th-steps/module/CS3244/project/17">STEPS Showcase</a> and <a href="https://i.imgur.com/APIkzdL.jpg">Poster</a></p>
-            </div>
-            <details style="padding: 2em 2em 2em 11em">
+            
+            <details >
                 <summary>Code Snippet 1: Preprocessing</summary>
                 <pre><code>
 # to find the average number of rows in each file
@@ -90,7 +90,7 @@ print("Approved columns length: ", len(approved_columns))
 np.save("approved_columns.npy", approved_columns)
                         </code></pre>
             </details>
-            <details style="padding: 1em 2em 2em 11em">
+            <details >
                 <summary>Code Snippet 2: Model</summary>
                 <pre><code>
 with session:
@@ -128,7 +128,7 @@ with session:
 
                 </code></pre>
             </details>
-        
+        </div>
         </section>
     </div>
 
