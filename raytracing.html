@@ -39,12 +39,14 @@
                     way to go about it. I had written a small ray tracer in Python first to learn the concepts of ray tracing and you see some renders from
                     that program below as well (denoted with Py). <br><br>
                     Work on the rusty tracer is still ongoing. However, with school restarting and an on-going job search, it's become much harder to find the time 
-                    needed. The basic tracer is completed and I'm currently working on the web interface. I have made progress in it but don't hold your breath.
-                    Rest assured, I do plan to finish this project. See you soon! </p>
-                <!-- <p>13 Aug: Updated with first pic of a Rusty render at the bottom <br>
+                    needed. The basic tracer is completed and I'm currently working on the web interface. 
+                    Rest assured, I do plan to finish this project. Scroll to the bottom if you really want to try it out. See you soon! </p>
+                <p>13 Aug: Updated with first pic of a Rusty render <br>
                     15 Aug: Patterns <br>
                     16 Aug: Reflections and refractions <br>
-                </p> -->
+                    28 Aug: Basis of the ray tracer is done <br>
+                    12 Sep: Finally got the Backend API working. Warp, a ton of Serde and a touch of Tokio<br>
+                </p> 
                 <!-- <p>Plan:
                 <ul>
                     <li>Web interface for live demo</li>
@@ -117,6 +119,71 @@
                         </span>
                     </div>
                 </div>
+                <br><br>
+                <h3>Try it out!</h3>
+                <p>
+                    In the meantime, have a rough, no-frontend interface to the backend: <br>
+                    By right, you can attach a base64 represntation of an image to the material of the element (sphere / plane), different types of light, but eh. If you're interested, just let me know. <br><br>
+                    API: https://rusty-tracing. herokuapp.com/trace <br>
+                    Send a POST request with the JSON as its body. You can mess around with the values to get a different picture. <br>
+                    
+                </p>
+                <details >
+                    <summary>JSON</summary>
+                    <pre><code>
+                        {
+                            "width": 800,
+                            "height": 600,
+                            "fov": 90.0,
+                            "elements": [
+                                {
+                                    "Sphere": {
+                                        "center": {
+                                            "x": 0.5,
+                                            "y": 0.6,
+                                            "z": -3.5
+                                        },
+                                        "radius": 1.5,
+                                        "material": {
+                                            "coloration": {
+                                                "Color" : {
+                                                    "red": 0.2,
+                                                    "green": 1.2,
+                                                    "blue": 1.0
+                                                }
+                                            },
+                                            "albedo": 0.15,
+                                            "surface": {
+                                                "Reflective": {
+                                                    "reflectivity": 0.3
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "lights": [
+                                {
+                                    "Spherical": {
+                                        "position": {
+                                            "x": -3.0,
+                                            "y": 5.0,
+                                            "z": -1.5
+                                        },
+                                        "intensity": 10000.0,
+                                        "color": {
+                                            "red": 1.0,
+                                            "green": 1.0,
+                                            "blue": 1.0
+                                        }
+                                    }
+                                }
+                            ],
+                            "shadow_bias": 0.000000001,
+                            "max_recursion_depth": 5
+                        }
+                    </code></pre>
+                </details>
             </div>
         </section>
 
