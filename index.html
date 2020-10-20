@@ -272,7 +272,23 @@
 			}
 		}
 
-		window.addEventListener("load", callbackFunc);
+		//this block for long load times
+		var timeoutVar;
+		function askForPatience() {
+			alert("It appears the page is taking a long time to load. Please refresh or wait a little more for the best experience.")
+		}
+		function onAllLoad() {
+			if (typeof timeoutVar !== "undefined") {
+				window.clearTimeout(timeoutVar);
+			}
+		}
+		function onDomLoad() {
+			timeoutVar = window.setTimeout(askForPatience, 2000)
+		}
+		window.addEventListener("DOMContentLoaded", onDomLoad)
+		window.addEventListener("load", onAllLoad);
+
+
 		window.addEventListener("scroll", callbackFunc);
 
 		function myFunction() {
