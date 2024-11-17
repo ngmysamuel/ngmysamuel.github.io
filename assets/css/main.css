@@ -1816,6 +1816,16 @@ input, select, textarea {
 			padding: 0;
 		}
 
+/* Special */
+
+.specialTextColor {
+	 color:rgb(219, 219, 219)
+}
+
+.specialTextColor2 {
+	color:antiquewhite
+}
+
 /* Button */
 
 	input[type="submit"],
@@ -1835,7 +1845,7 @@ input, select, textarea {
 		border: solid 1px !important;
 		border-color: rgba(255, 255, 255, 0.15) !important;
 		border-radius: 3em;
-		color: #ffffff !important;
+		color: rgb(253, 253, 253) !important; /*ffffff*/
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -3240,15 +3250,15 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #5484bb;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #938BA1;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #8791a7;
 		}
 
 		.wrapper.style2-alt {
@@ -3261,6 +3271,10 @@ input, select, textarea {
 
 		.wrapper.style3-alt {
 			background-color: #953d75;
+		}
+
+		.wrapper.style4 {
+			background-color: #717a8b;
 		}
 
 		.wrapper.fullscreen {
@@ -3372,7 +3386,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: #011d50;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3526,7 +3540,7 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		background: #011d50;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3986,7 +4000,7 @@ input, select, textarea {
 
 .timeline { /*min-height: even if there is lesser items, it will still take up the full screen space. It will auto expand when there are more.*/
 	min-height: 100vh; 
-	background-color: rgb(160, 107, 107);
+	background-color: #5484bb;
 	padding-bottom: 2%;
 	padding-top: 3%;
 }
