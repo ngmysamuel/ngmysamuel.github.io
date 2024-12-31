@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Youtube Playlist Recovery</title>
+    <title>Toy Compiler</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -34,10 +34,10 @@
         <section id="main" class="wrapper style4 ">
             <div class="inner">
                 <h1 class="major specialTextColor2">
-                    Youtube Playlist Recovery
+                    Toy Compiler
                     <span style="font-size: medium; font-weight: lighter; float: right;color: #add8e6 ;">
                         Source:&nbsp;&nbsp;
-                        <a href="https://github.com/ngmysamuel/youtube-playlists-recovery-public">
+                        <a href="https://github.com/ngmysamuel/compiler-n2t">
                             <i class="fab fa-github" style="color:antiquewhite ;"></i>
                             &nbsp;
                             <span style="color:antiquewhite ;">
@@ -47,17 +47,31 @@
                     </span>
                 </h1>
                 <p  class="specialTextColor2">
-                    This project was made in a hurry. A prior service that I was using was shutting down and they were not willing to open source 
-                    their code. So I took things into my own hands and created this<br><br>
-                    A scheduler runs every 2 days cataloguing all your playlists and liked videos in Youtube, storing them in a MongoDatabase.
-                    It then compares between the two, past and present. And finally it also links up with an email service to ensure you get
-                    notified of the missing video. <br><br>
-                    Its been deployed on Heroku with Cloudflare helping and you can visit it at: <a href="https://www.yt-playlists-recovery.site/">https://www.yt-playlists-recovery.site/</a> 
-                    <br><br>
-                    MongoDB, Express and a little PUG.
-                    <br><br><br><i>Update: I don't have the money to renew the domain so by the time you're reading this, it might already be dead. You'll
-                    have to clone the repo and run it yourself.</i>
+                    A toy compiler - point it to a directory or a specific file, invoke the relevant module, and the corresponding file will be generated<br><br>
+                    There are 3 modules in the project.
+                    <ol class="specialTextColor2">
+                        <li>
+                            Compiler - compiles high level Jack language into VM language (similar in concept to Java's bytecode)
+                        </li>
+                        <li>
+                            Translator - translates VM language into symbolic binary i.e. Assembly
+                        </li>
+                        <li>
+                            Assembler - assembles the assembly into binary 
+                        </li>
+                    </ol>
+                    <p  class="specialTextColor2">
+                        There's an additional end to end module which takes Jack and outputs binary with a single command. Intermediate files are still generated.<br /><br />
+                        For more details, please visit the <a href="https://github.com/ngmysamuel/compiler-n2t">GitHub project page</a>. For more information on Jack, please visit the course site <a href="https://www.nand2tetris.org/project09">here</a>.<br /><br />
+                        Written in Python.
+                    </p>
                 </p>
+                <div class="row gtr-uniform">
+                    <div class="col-4 ">
+                        <span class="zoom-without-container image fit "><img src="images/toycompiler/flow.svg"
+                                alt="" /></span>
+                    </div>
+                </div>
             </div>
         </section>
 
